@@ -1,59 +1,59 @@
-# Simulación y Análisis de la Dinámica de un Protón en un Modelo de Ciclotrón
+# Simulation and Analysis of Proton Dynamics in a Cyclotron Model
 
-Este proyecto presenta una simulación numérica de la dinámica clásica de un protón dentro de un ciclotrón. Utiliza el método de **Runge-Kutta de cuarto orden (RK4)** para resolver las ecuaciones de movimiento bajo la influencia de un campo eléctrico de radiofrecuencia (RF) y un campo magnético uniforme.
+This project presents a numerical simulation of the classical dynamics of a proton inside a cyclotron. It utilizes the **fourth-order Runge-Kutta (RK4) method** to solve the equations of motion under the influence of a radiofrequency (RF) electric field and a uniform magnetic field.
 
-El desarrollo forma parte de mi **Trabajo integrador de ciclo de formación modular básico 2025A** de la Licenciatura en Física en el **CUCEI, Universidad de Guadalajara**.
+This development is part of my **2025A Modular Basic Training Cycle Integrative Work** evaluation for the Bachelor of Physics at **CUCEI, University of Guadalajara**.
 
-## Contexto y Objetivos
-La terapia con protones es una aplicación crucial de la física de partículas en medicina, permitiendo dirigir haces hacia tejidos tumorales con alta precisión y minimizar el daño a tejidos sanos mediante el aprovechamiento del **pico de Bragg**.
+## Context and Objectives
+Proton therapy is a crucial application of particle physics in medicine, allowing beams to be directed at tumor tissues with high precision and minimizing damage to healthy tissues by leveraging the **Bragg peak**.
 
-Los objetivos principales de este estudio son:
-* **Analizar** la trayectoria y la evolución de la energía cinética de un protón en presencia de campos electromagnéticos.
-* **Comparar** los enfoques analíticos y numéricos (RK4) implementados en Python.
-* **Evaluar** la capacidad del modelo mediante un análisis estadístico exhaustivo.
+The main objectives of this study are:
+* **Analyze** the trajectory and the evolution of a proton's kinetic energy in the presence of electromagnetic fields.
+* **Compare** the analytical and numerical (RK4) approaches implemented in Python.
+* **Evaluate** the model's capacity through exhaustive statistical analysis.
 
-## Marco Teórico
-La dinámica de la partícula está regida por la **Fuerza de Lorentz**:
+## Theoretical Framework
+The particle dynamics are governed by the **Lorentz Force**:
 
 $$\vec{F} = q (\vec{E} + \vec{v} \times \vec{B})$$
 
-El sistema del ciclotrón se divide en dos regiones principales:
-1. **Región de vacío (Gap):** Donde el campo eléctrico realiza trabajo sobre la partícula, incrementando su rapidez y energía cinética.
-2. **Región de los Dees:** Donde actúa un campo magnético uniforme de forma perpendicular a la velocidad, generando un movimiento circular con un radio de curvatura conocido como **radio de Larmor**.
+The cyclotron system is divided into two primary regions:
+1. **Vacuum Region (Gap):** Where the electric field performs work on the particle, increasing its speed and kinetic energy.
+2. **Dee Region:** Where a uniform magnetic field acts perpendicularly to the velocity, generating circular motion with a radius of curvature known as the **Larmor radius**.
 
-## 🛠️ Parámetros de Simulación
-Valores y constantes utilizados para la modelación:
+## 🛠️ Simulation Parameters
+Values and constants used for modeling:
 
-| Parámetro | Símbolo | Valor |
+| Parameter | Symbol | Value |
 | :--- | :---: | :--- |
-| Campo Magnético | $B_0$ | 2 T |
-| Voltaje de RF | $V_0$ | 60 kV |
-| Separación entre Dees | $d$ | 0.05 m |
-| Campo Eléctrico Inicial | $E_0$ | 1.2 x 10^6 V/m |
-| Radio de los Dees | $R$ | 1 m |
-| Masa del protón | $m$ | 1.672 x 10^-27 kg |
-| Frecuencia Ciclotrónica | $\omega_c$ | 191.51 MHz |
+| Magnetic Field | $B_0$ | 2 T |
+| RF Voltage | $V_0$ | 60 kV |
+| Gap Separation | $d$ | 0.05 m |
+| Initial Electric Field | $E_0$ | 1.2 x 10^6 V/m |
+| Dee Radius | $R$ | 1 m |
+| Proton Mass | $m$ | 1.672 x 10^-27 kg |
+| Cyclotron Frequency | $\omega_c$ | 191.51 MHz |
 
-## Estructura del Proyecto
-El código está organizado en tres scripts principales de Python:
+## Project Structure
+The code is organized into three main Python scripts:
 
-* `src/NonRelativisticCyclotronSimulation.py`: Simulación numérica mediante **RK4** con paso de tiempo de $10^{-12}$ s.
-* `src/AnalyticalSolGraph.py`: Implementación de las ecuaciones analíticas paramétricas para obtener la trayectoria teórica exacta.
-* `src/CorrelationAndDataAnalysis.py`: Procesamiento de resultados y comparaciones estadísticas (correlación, errores y desfases).
+* `src/NonRelativisticCyclotronSimulation.py`: Numerical simulation using **RK4** with a $10^{-12}$ s time step.
+* `src/AnalyticalSolGraph.py`: Implementation of exact analytical parametric equations to obtain the theoretical trajectory.
+* `src/CorrelationAndDataAnalysis.py`: Processing of results and statistical comparisons (correlation, errors, and offsets).
 
-## Resultados Destacados
-* **Correlación Perfecta:** Se obtuvo una correlación de **1.0** entre la simulación numérica y la analítica en tiempo, posición y energía.
-* **Trayectoria:** El protón completa aproximadamente **25.27 vueltas** antes de alcanzar el límite del radio de diseño.
-* **Sincronización:** El análisis determinó que la frecuencia del voltaje de RF debe incrementarse conforme la partícula acelera para compensar su menor tiempo de permanencia en el *gap*.
-* **Precisión:** El desfase de fase promedio detectado fue de apenas **0.012 rad** (0.69°).
+## Highlighted Results
+* **Perfect Correlation:** A **1.0** correlation was achieved between the numerical and analytical simulations for time, position, and energy.
+* **Trajectory:** The proton completes approximately **25.27 turns** before reaching the simulation radius limit, determined by the amount of data a single Excel sheet hold, for simplicity.
+* **Synchronization:** Analysis determined that the RF voltage frequency must increase as the particle accelerates to compensate for its shorter residence time in the *gap*.
+* **Precision:** The average phase offset detected was only **0.012 rad** (0.69°).
 
-## Requerimientos
-Entorno utilizado para ejecutar las simulaciones:
-* **Lenguaje:** Python 3.9.13
+## Requirements
+Environment used to run the simulations:
+* **Language:** Python 3.9.13
 * **IDE:** PyCharm Professional Edition 2022.2.1
-* **Librerías:** NumPy, Pandas y Matplotlib
+* **Libraries:** NumPy, Pandas, and Matplotlib
 
-## Autores
-* **Jorge Ramírez López** - Desarrollo y Simulación - jorge.ramirez9331@alumnos.udg.mx
-* **Asesor:** Mario Bolívar Gaeta Verdín
-* **Institución:** Departamento de Física, CUCEI, Universidad de Guadalajara
+## Authors
+* **Jorge Ramírez López** - Development and Simulation - jorge.ramirez9331@alumnos.udg.mx
+* **Advisor:** Mario Bolívar Gaeta Verdín, Ph.D.
+* **Institution:** Physics Department, CUCEI, University of Guadalajara
