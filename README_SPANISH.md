@@ -43,7 +43,7 @@ El código está organizado en tres scripts principales de Python:
 
 ## Resultados Destacados
 * **Correlación Perfecta:** Se obtuvo una correlación de **1.0** entre la simulación numérica y la analítica en tiempo, posición y energía.
-* **Trayectoria:** El protón completa aproximadamente **25.27 vueltas** antes de alcanzar el límite del radio de diseño.
+* **Trayectoria:** El protón completó aproximadamente **25,27 vueltas** antes de alcanzar el límite del radio de simulación, determinado por la cantidad de datos que puede contener una sola hoja de Excel, para simplificar. 
 * **Sincronización:** El análisis determinó que la frecuencia del voltaje de RF debe incrementarse conforme la partícula acelera para compensar su menor tiempo de permanencia en el *gap*.
 * **Precisión:** El desfase de fase promedio detectado fue de apenas **0.012 rad** (0.69°).
 
