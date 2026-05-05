@@ -2,7 +2,7 @@
 
 Este proyecto presenta una simulación numérica de la dinámica clásica de un protón dentro de un ciclotrón. Utiliza el método de **Runge-Kutta de cuarto orden (RK4)** para resolver las ecuaciones de movimiento bajo la influencia de un campo eléctrico de radiofrecuencia (RF) y un campo magnético uniforme.
 
-El desarrollo forma parte de la **Evaluación Modular 2025A** de la Licenciatura en Física en el **CUCEI, Universidad de Guadalajara**.
+El desarrollo forma parte de la evaluación del **Trabajo integrador de ciclo de formación modular básico 2025A** de la Licenciatura en Física en el **CUCEI, Universidad de Guadalajara**.
 
 ## Contexto y Objetivos
 La terapia con protones es una aplicación crucial de la física de partículas en medicina, permitiendo dirigir haces hacia tejidos tumorales con alta precisión y minimizar el daño a tejidos sanos mediante el aprovechamiento del **pico de Bragg**.
